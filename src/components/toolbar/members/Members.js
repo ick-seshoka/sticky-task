@@ -15,7 +15,7 @@ Members.defaultProps = {
 };
 
 Members.propTypes = {
-  members: PropTypes.bool,
+  members: PropTypes.array,
 };
 
 export default Members;
