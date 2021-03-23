@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <circle id="path-1" cx="30" cy="30" r="30"></circle>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Web-layout---Desktop-HD" transform="translate(-44.000000, -155.000000)">
+            <g id="Task-manager" transform="translate(-2.000000, 0.000000)">
+                <g id="Toolbar">
+                    <g id="Members" transform="translate(34.000000, 155.000000)">
+                        <g id="Add-icon" transform="translate(12.000000, 0.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Background" fill="#37474F" xlink:href="#path-1"></use>
+                            <g id="Plus-sign" mask="url(#mask-2)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5">
+                                <g transform="translate(20.000000, 21.000000)" id="Combined-Shape">
+                                    <path d="M9.10416667,9 L9.10416667,0.391304348 L9.10416667,9 L0.395833333,9 L9.10416667,9 Z M9.10416667,9 L9.10416667,17.6086957 L9.10416667,9 L18.6041667,9 L9.10416667,9 Z"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

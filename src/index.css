@@ -2,10 +2,18 @@
   --blue-gray: #90a4ae;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 code {
@@ -15,6 +23,7 @@ code {
 
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 a {
