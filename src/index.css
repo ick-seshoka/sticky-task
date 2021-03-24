@@ -28,4 +28,5 @@ code {
 
 a {
   color: var(--blue-gray);
+  text-decoration: none;
 }

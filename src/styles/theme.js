@@ -15,6 +15,25 @@ export const theme = {
     darkBlueGray: "#37474F",
     shadedBlueGray: "#90A4AE",
   },
-  fontSize: {},
-  spacing: {},
+  fontSize: {
+    xlarge: "1.875em",
+    medium: "1.125em",
+  },
+  spacing: {
+    container: {
+      paddingLeft: "3.125em",
+      paddingRight: "3.125em",
+      paddingTop: "3.125em",
+      paddingBottom: "3.125em",
+    },
+    heading: {
+      paddingBottom: "0.3em",
+    },
+    image: {
+      paddingRight: "0.875em",
+    },
+    paragraph: {
+      paddingLeft: "2.875em",
+    },
+  },
 };

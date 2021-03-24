@@ -11,10 +11,7 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const AddMemberButton = styled(AddMemberButtonSource)`
-  margin-bottom: "";
-  margin-top: "";
-`;
+export const AddMemberButton = styled(AddMemberButtonSource)``;
 
 export const Title = styled.p`
   font-size: 1.125em;

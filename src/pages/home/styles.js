@@ -6,4 +6,7 @@ export const Container = styled.div`
   height: 100%;
 `;
 
-export const Title = styled.p``;
+export const Main = styled.div`
+  display: grid;
+  grid-template-rows: 9.85em [Header] 3.75em [Filter] auto [Tasks];
+`;
