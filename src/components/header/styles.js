@@ -52,7 +52,6 @@ export const Logo = styled(Link)`
 export const LogoIcon = styled(IconSource).attrs({ src: StickyTaskIcon })``;
 
 export const Slogan = styled.p`
-  text-transform: capitalize;
   font-size: ${({ theme: { fontSize } }) => fontSize.medium};
   padding-left: ${({
     theme: {

@@ -18,6 +18,7 @@ export const theme = {
   fontSize: {
     xlarge: "1.875em",
     medium: "1.125em",
+    title: "0.875em",
   },
   spacing: {
     container: {
@@ -34,6 +35,7 @@ export const theme = {
     },
     paragraph: {
       paddingLeft: "2.875em",
+      imageGap: "0.375em",
     },
   },
 };

@@ -2,6 +2,8 @@ import React from "react";
 
 import { routes } from "@enums";
 
+import Navigation from "@components/navigation";
+
 import { Container, ContentWrap, Logo, LogoIcon, Slogan } from "./styles";
 
 const Header = () => (
@@ -13,6 +15,7 @@ const Header = () => (
       </Logo>
       <Slogan>Manage your team’s tasks easily with sticky notes tasks</Slogan>
     </ContentWrap>
+    <Navigation />
   </Container>
 );
 
