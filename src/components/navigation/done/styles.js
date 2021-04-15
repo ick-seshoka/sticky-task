@@ -8,6 +8,7 @@ import UncheckedIconSource from "@assets/svg/unchecked-icon.svg";
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
+  width: 10.77em;
 `;
 
 export const CheckedIcon = styled(IconSource).attrs({

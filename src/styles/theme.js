@@ -14,6 +14,7 @@ export const theme = {
     red: "#F44336",
     darkBlueGray: "#37474F",
     shadedBlueGray: "#90A4AE",
+    transparent: "transparent",
   },
   fontSize: {
     xlarge: "1.875em",
@@ -36,6 +37,9 @@ export const theme = {
     paragraph: {
       paddingLeft: "2.875em",
       imageGap: "0.375em",
+    },
+    status: {
+      offBorderSpace: "4.5625em",
     },
   },
 };

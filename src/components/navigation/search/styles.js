@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 0.8675em 6.75em;
   border-bottom: 1px solid ${({ theme: { colors } }) => colors.blueGray};
-  width: 7.775em;
+  width: 10.775em;
   height: 1.87em;
   align-items: center;
 `;
@@ -22,5 +22,5 @@ export const Input = styled.input`
   width: 7.775em;
   outline: none;
   color: ${({ theme: { colors } }) => colors.blueGray};
-  font-weight: 600;
+  font-size: ${({ theme: { fontSize } }) => fontSize.medium};
 `;

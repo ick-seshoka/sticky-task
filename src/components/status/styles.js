@@ -5,6 +5,7 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  padding-right: ${({ theme: { spacing } }) => spacing.status.offBorderSpace};
   background-color: ${({ theme: { colors } }) => colors.gray};
 `;
 
