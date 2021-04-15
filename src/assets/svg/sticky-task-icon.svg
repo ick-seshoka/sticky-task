@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="35px" viewBox="0 0 37 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M2.50588253,0 L34.501,0 C35.8811596,-3.93101513e-15 37,1.11884042 37,2.49900002 L37,32.501 C37,33.8811596 35.8811596,35 34.501,35 L9.92297652,35 C9.33334505,35 8.76270446,34.7915098 8.31195288,34.4113936 L4.72336351,31.3851575 C4.70763909,31.3718972 4.692079,31.3584433 4.67668678,31.3447988 L0.913198686,28.0086388 C0.379951248,27.5359394 0.0738683545,26.8580734 0.0719084846,26.1454769 L0.00689195818,2.50587305 C0.003096089,1.12571867 1.11885512,0.00380532069 2.4990095,9.45150431e-06 C2.5013005,3.15050441e-06 2.50359152,-1.33184678e-15 2.50588253,-1.33226763e-15 Z" id="path-1"></path>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Web-layout---Desktop-HD" transform="translate(-198.000000, -50.000000)">
+            <g id="Task-manager" transform="translate(-2.000000, 0.000000)">
+                <g id="Header" transform="translate(200.000000, 47.000000)">
+                    <g id="Logo-(page-title-logo)" transform="translate(0.000000, 1.000000)">
+                        <g id="Sticky-note" transform="translate(0.000000, 2.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Background" fill="#2196F3" xlink:href="#path-1"></use>
+                            <g id="Fold" mask="url(#mask-2)" fill="#1565C0" stroke="#1565C0" stroke-linejoin="round" stroke-width="0.5">
+                                <g transform="translate(-1.000000, 25.000000)" id="Path">
+                                    <polygon transform="translate(5.539592, 6.328377) scale(-1, 1) rotate(-256.000000) translate(-5.539592, -6.328377) " points="0.53872756 2.49573006 0.565289182 10.1610241 10.5404574 9.16918706"></polygon>
+                                </g>
+                            </g>
+                            <g id="Tick" mask="url(#mask-2)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.0825">
+                                <g transform="translate(13.000000, 13.000000)" id="Path-2">
+                                    <polyline points="0 4.37023399 4.47449323 9.38916228 13.6861556 0"></polyline>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
