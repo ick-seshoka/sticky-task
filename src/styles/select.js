@@ -54,6 +54,12 @@ export const taskMemberSelect = {
   control: (provided, state) => ({
     ...provided,
     backgroundColor: "transparent",
+    border: "none",
+  }),
+
+  indicatorSeparator: (provided, state) => ({
+    ...provided,
+    display: "none",
   }),
 };
 
@@ -69,5 +75,26 @@ export const statusSelect = {
   control: (provided, state) => ({
     ...provided,
     backgroundColor: "rgba(255,255,255, 0.5)",
+  }),
+};
+
+export const prioritySelect = {
+  container: (provided, state) => ({
+    ...provided,
+    transform: "scale(0.7)",
+    fontSize: theme.medium,
+    fontWeight: "600",
+    left: "-1.75em",
+  }),
+
+  control: (provided, state) => ({
+    ...provided,
+    backgroundColor: "transparent",
+    border: "none",
+  }),
+
+  indicatorSeparator: (provided, state) => ({
+    ...provided,
+    display: "none",
   }),
 };

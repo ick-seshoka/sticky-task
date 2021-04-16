@@ -1,7 +1,7 @@
 import React from "react";
 
-import { taskMemberSelect, statusSelect } from "@styles";
-import { statusOptions } from "@enums";
+import { taskMemberSelect, statusSelect, prioritySelect } from "@styles";
+import { statusOptions, priorityOptions } from "@enums";
 
 import {
   Container,
@@ -11,6 +11,7 @@ import {
   Label,
   Status,
   MemeberSelect,
+  GridWrap,
   PrioritySelect,
   StatusSelect,
 } from "./styles";
@@ -29,14 +30,24 @@ const StickyTask = ({
         <Title value={title} onChange={() => {}} />
         <ContentWrap>
           <Label>for:</Label>
-          <MemeberSelect customeStyles={taskMemberSelect} />
+          <MemeberSelect customStyles={taskMemberSelect} />
         </ContentWrap>
-        <ContentWrap>
-          <StatusSelect
-            customeStyles={statusSelect}
-            options={statusOptions}
-            placeholder="select status"
-          />
+        <ContentWrap flexDirection="row">
+          <GridWrap>
+            <StatusSelect
+              customStyles={statusSelect}
+              options={statusOptions}
+              placeholder="select status"
+              customDropdown
+            />
+
+            <PrioritySelect
+              customStyles={prioritySelect}
+              options={priorityOptions}
+              placeholder="select priority"
+              customDropdown
+            />
+          </GridWrap>
         </ContentWrap>
       </ContentWrap>
       <StatusBar statusColor={statusColor} />

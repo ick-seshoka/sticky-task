@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import { navSelectMember } from "@styles";
 
+import DropdownIndicator from "./dropdownIndicator";
+
 import { Container } from "./styles";
 
 const Select = ({
@@ -10,11 +12,21 @@ const Select = ({
   onChange,
   defaultValue,
   placeholder,
-  customeStyles,
+  customStyles,
+  customDropdown,
 }) => {
-  return (
+  return customDropdown ? (
     <Container
-      styles={customeStyles}
+      components={{ DropdownIndicator }}
+      styles={customStyles}
+      defaultValue={defaultValue}
+      options={options}
+      onChange={onChange}
+      placeholder={placeholder}
+    />
+  ) : (
+    <Container
+      styles={customStyles}
       defaultValue={defaultValue}
       options={options}
       onChange={onChange}
@@ -32,7 +44,8 @@ Select.defaultProps = {
   defaultProps: {},
   onChange: () => {},
   placeholder: "All members",
-  customeStyles: navSelectMember,
+  customStyles: navSelectMember,
+  customDropdown: false,
 };
 
 Select.propTypes = {
@@ -40,7 +53,8 @@ Select.propTypes = {
   defaultValue: PropTypes.object,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-  customeStyles: PropTypes.object,
+  customStyles: PropTypes.object,
+  customDropdown: PropTypes.bool,
 };
 
 export default Select;

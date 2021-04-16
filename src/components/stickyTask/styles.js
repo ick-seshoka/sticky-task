@@ -15,7 +15,7 @@ export const Container = styled.div`
 
 export const ContentWrap = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ flexDirection }) => flexDirection || "column"};
   margin: ${({ margined }) => (margined && "0.85em") || 0};
 `;
 
@@ -53,6 +53,12 @@ export const StatusSelect = styled(Select)``;
 export const Status = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+`;
+
+export const GridWrap = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 8em);
+  width: 14.75em;
 `;
 
 export const PrioritySelect = styled(Select)``;
