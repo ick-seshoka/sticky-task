@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import { StickyTasksContext } from "@contexts/stickyTasksContext";
 import { taskMemberSelect, statusSelect, prioritySelect } from "@styles";
 import { statusOptions, priorityOptions } from "@enums";
 
@@ -17,6 +18,7 @@ import {
 } from "./styles";
 
 const StickyTask = ({
+  id,
   userColor,
   statusColor,
   title,
@@ -24,12 +26,19 @@ const StickyTask = ({
   user,
   priority,
 }) => {
+  const { titleUpdate } = useContext(StickyTasksContext);
+
+  const handleTitleChange = (e) => {
+    const { value } = e.target;
+    titleUpdate(id, value);
+  };
+
   return (
     <Container userColor={userColor}>
       <ContentWrap margined>
         <Title
           value={title}
-          onChange={() => {}}
+          onChange={handleTitleChange}
           placeholder="Sticky task title goes here, write a short description of the sticky task"
         />
         <ContentWrap>

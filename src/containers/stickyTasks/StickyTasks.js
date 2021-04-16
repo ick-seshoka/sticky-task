@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
+import { StickyTasksContext } from "@contexts/stickyTasksContext";
 import StickyTask from "@components/stickyTask";
 import NewTaskCard from "@components/newTaskCard";
 
 import { Container } from "./styles";
 
 const StickyTasks = ({ tasks }) => {
+  const { newStickyTaskCardOn } = useContext(StickyTasksContext);
   const stickyTasks = tasks.map((task, index) => (
     <StickyTask key={index} {...task} />
   ));
@@ -14,7 +16,7 @@ const StickyTasks = ({ tasks }) => {
   return (
     <Container>
       {stickyTasks}
-      <NewTaskCard />
+      {newStickyTaskCardOn && <NewTaskCard />}
     </Container>
   );
 };
@@ -22,6 +24,7 @@ const StickyTasks = ({ tasks }) => {
 StickyTasks.defaultProps = {
   tasks: [
     {
+      id: "1",
       title: "Update your order for the work journals and follow up",
       status: "done",
       statusColor: "#FFA000",
@@ -30,6 +33,7 @@ StickyTasks.defaultProps = {
       priority: "medium",
     },
     {
+      id: "2",
       title: "Debug service worker for SMS gateway in Prod",
       status: "in_progress",
       statusColor: "#F44336",
@@ -38,6 +42,7 @@ StickyTasks.defaultProps = {
       priority: "high",
     },
     {
+      id: "3",
       title: "Conduct user research on social media app idea",
       status: "done",
       statusColor: "#FFC107",

@@ -5,7 +5,7 @@ import Select from "@components/select";
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr fit-content(1em);
-  height: 15.635em;
+  height: 16.137em;
   width: 17.75em;
   background-color: ${({ userColor, theme: { colors } }) =>
     userColor || colors.gray};
@@ -37,6 +37,7 @@ export const Title = styled.textarea`
   font-weight: 600;
   width: 15.25em;
   height: 8.125em;
+  margin-bottom: 0.5em;
 `;
 
 export const Label = styled.p`
