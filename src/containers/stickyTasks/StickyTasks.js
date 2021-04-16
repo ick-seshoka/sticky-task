@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { taskMemberSelect } from "@styles";
 import StickyTask from "@components/stickyTask";
+import NewTaskCard from "@components/newTaskCard";
 
 import { Container } from "./styles";
 
@@ -11,7 +11,12 @@ const StickyTasks = ({ tasks }) => {
     <StickyTask key={index} {...task} />
   ));
 
-  return <Container>{stickyTasks}</Container>;
+  return (
+    <Container>
+      {stickyTasks}
+      <NewTaskCard />
+    </Container>
+  );
 };
 
 StickyTasks.defaultProps = {
