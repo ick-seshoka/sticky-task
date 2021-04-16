@@ -1,7 +1,7 @@
 import React from "react";
 
 import Search from "./search";
-import Select from "./select";
+import Select from "@components/select";
 import Done from "./done";
 
 import { Container } from "./styles";
