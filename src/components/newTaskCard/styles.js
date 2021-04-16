@@ -14,6 +14,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1.5em;
+  cursor: pointer;
 `;
 
 export const CirclePlusIcon = styled(Icon).attrs({
