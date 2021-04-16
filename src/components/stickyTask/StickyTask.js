@@ -27,7 +27,11 @@ const StickyTask = ({
   return (
     <Container userColor={userColor}>
       <ContentWrap margined>
-        <Title value={title} onChange={() => {}} />
+        <Title
+          value={title}
+          onChange={() => {}}
+          placeholder="Sticky task title goes here, write a short description of the sticky task"
+        />
         <ContentWrap>
           <Label>for:</Label>
           <MemeberSelect customStyles={taskMemberSelect} />
