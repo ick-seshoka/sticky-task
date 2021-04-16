@@ -20,6 +20,8 @@ export const theme = {
     xlarge: "1.875em",
     medium: "1.125em",
     title: "0.875em",
+    label: "0.725em",
+    regular: "1em",
   },
   spacing: {
     container: {
@@ -40,6 +42,10 @@ export const theme = {
     },
     status: {
       offBorderSpace: "4.5625em",
+    },
+    stickyTasks: {
+      containerPadding: "3.75em",
+      taskMargin: "1.5em",
     },
   },
 };
