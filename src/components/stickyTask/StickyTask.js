@@ -40,7 +40,6 @@ const StickyTask = ({
               placeholder="select status"
               customDropdown
             />
-
             <PrioritySelect
               customStyles={prioritySelect}
               options={priorityOptions}

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import StickyTasksContextProvider from "@contexts";
+import { StickyTasksContext } from "@contexts/stickyTasksContext";
 
 import Toolbar from "@components/toolbar";
 import Header from "@components/header";
@@ -9,17 +9,19 @@ import StickyTasks from "@containers/stickyTasks";
 
 import { Container, Main } from "./styles";
 
-const Home = () => (
-  <Container>
-    <StickyTasksContextProvider>
+const Home = () => {
+  const { stickyTasks } = useContext(StickyTasksContext);
+
+  return (
+    <Container>
       <Toolbar />
       <Main>
         <Header />
         <Status />
-        <StickyTasks />
+        <StickyTasks tasks={stickyTasks} />
       </Main>
-    </StickyTasksContextProvider>
-  </Container>
-);
+    </Container>
+  );
+};
 
 export default Home;

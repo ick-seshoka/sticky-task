@@ -1,9 +1,14 @@
 import React, { createContext, useState } from "react";
 
+import { stickyTasksData } from "@data";
+
 export const StickyTasksContext = createContext();
 
 const StickyTasksContextProvider = (props) => {
-  const [state, setState] = useState({ stickyTasks: [], memebers: [] });
+  const [state, setState] = useState({
+    stickyTasks: stickyTasksData,
+    memebers: [],
+  });
 
   const setStickyTasks = (stickyTasks) => {
     setState({ ...state, stickyTasks });
