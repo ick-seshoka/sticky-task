@@ -1,17 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useContext } from "react";
 
-import Member from "./members";
+import { StickyTasksContext } from "@contexts/stickyTasksContext";
 
 import { Container, AddMemberButton, Title } from "./styles";
-import Members from "./members/Members";
+import Members from "./members";
 
-const Toolbar = () => (
-  <Container>
-    <AddMemberButton />
-    <Title>members</Title>
-    <Members />
-  </Container>
-);
+const Toolbar = () => {
+  const { members } = useContext(StickyTasksContext);
+
+  return (
+    <Container>
+      <AddMemberButton />
+      <Title>members</Title>
+      <Members members={members} />
+    </Container>
+  );
+};
 
 export default Toolbar;

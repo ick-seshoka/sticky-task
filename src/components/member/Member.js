@@ -2,19 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Container } from "./styles";
+import { getNameFirstLetter } from "../../helpers";
 
-const Member = ({ color, nameFirstLetter }) => (
-  <Container color={color}>{nameFirstLetter}</Container>
+const Member = ({ name, color, id }) => (
+  <Container color={color}>{getNameFirstLetter(name)}</Container>
 );
 
 Member.defaultProps = {
+  name: "John",
   color: "#2196F3",
-  nameFirstLetter: "A",
+  id: "1",
 };
 
 Member.propTypes = {
+  name: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  nameFirstLetter: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default Member;

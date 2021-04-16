@@ -1,9 +1,10 @@
 import * as actions from "./actions";
 import { stickyTasksData, newStickyTask } from "@data";
+import { members } from "@data";
 
 export const initialState = {
   stickyTasks: stickyTasksData,
-  memebers: [],
+  members: members,
   newStickyTaskCardOn: true,
 };
 
@@ -39,9 +40,9 @@ export const reducer = (state = initialState, action) => {
     case actions.ADD_MEMBER: {
       return {
         ...state,
-        memebers: [
+        members: [
           ...state.members,
-          { id: state.memebers.length + 1, ...newMemeber },
+          { id: state.members.length + 1, ...newMemeber },
         ],
       };
     }

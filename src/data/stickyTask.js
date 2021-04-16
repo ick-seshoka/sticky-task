@@ -8,18 +8,15 @@ export const newStickyTask = {
 };
 
 export const newMember = {
-  name: "",
-  color: "",
+  color: "#90A4AE",
   name: "",
 };
 
-export const memebers = {
-  members: [
-    { id: 1, color: "#FFA000", name: "Tshil" },
-    { id: 2, color: "#E91E63", name: "Kagiso" },
-    { id: 3, color: "#2196F3", name: "Isaac" },
-  ],
-};
+export const members = [
+  { id: 1, color: "#FFA000", name: "tshil" },
+  { id: 2, color: "#E91E63", name: "kagiso" },
+  { id: 3, color: "#2196F3", name: "isaac" },
+];
 
 export const stickyTasksData = [
   {

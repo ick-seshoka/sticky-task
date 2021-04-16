@@ -12,13 +12,13 @@ export const StickyTasksContext = createContext();
 const StickyTasksContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { stickyTasks, memebers, newStickyTaskCardOn } = state;
+  const { stickyTasks, members, newStickyTaskCardOn } = state;
 
   return (
     <StickyTasksContext.Provider
       value={{
         stickyTasks,
-        memebers,
+        members,
         newStickyTaskCardOn,
         titleUpdate: (id, title) => updateStickyTaskTitle(dispatch, id, title),
         hideNewStickyTaskCard: () => hideNewStickyTaskCard(dispatch),
