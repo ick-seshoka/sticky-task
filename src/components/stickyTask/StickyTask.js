@@ -1,5 +1,8 @@
 import React from "react";
 
+import { taskMemberSelect, statusSelect } from "@styles";
+import { statusOptions } from "@enums";
+
 import {
   Container,
   ContentWrap,
@@ -7,6 +10,9 @@ import {
   Title,
   Label,
   Status,
+  MemeberSelect,
+  PrioritySelect,
+  StatusSelect,
 } from "./styles";
 
 const StickyTask = ({
@@ -23,6 +29,14 @@ const StickyTask = ({
         <Title value={title} onChange={() => {}} />
         <ContentWrap>
           <Label>for:</Label>
+          <MemeberSelect customeStyles={taskMemberSelect} />
+        </ContentWrap>
+        <ContentWrap>
+          <StatusSelect
+            customeStyles={statusSelect}
+            options={statusOptions}
+            placeholder="select status"
+          />
         </ContentWrap>
       </ContentWrap>
       <StatusBar statusColor={statusColor} />

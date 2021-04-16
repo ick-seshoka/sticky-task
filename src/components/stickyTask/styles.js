@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
+import Select from "@components/select";
+
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr fit-content(1em);
-  height: 13.135em;
-  width: 13.75em;
+  height: 15.635em;
+  width: 17.75em;
   background-color: ${({ userColor, theme: { colors } }) =>
     userColor || colors.gray};
   border-radius: 1em;
@@ -33,7 +35,7 @@ export const Title = styled.textarea`
   color: ${({ theme: { colors } }) => colors.white};
   font-size: ${({ theme: { fontSize } }) => fontSize.regular};
   font-weight: 600;
-  width: 11.25em;
+  width: 15.25em;
   height: 8.125em;
 `;
 
@@ -44,7 +46,13 @@ export const Label = styled.p`
   text-transform: capitalize;
 `;
 
+export const MemeberSelect = styled(Select)``;
+
+export const StatusSelect = styled(Select)``;
+
 export const Status = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 `;
+
+export const PrioritySelect = styled(Select)``;

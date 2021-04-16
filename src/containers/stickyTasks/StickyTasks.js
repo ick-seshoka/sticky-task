@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { taskMemberSelect } from "@styles";
 import StickyTask from "@components/stickyTask";
 
 import { Container } from "./styles";

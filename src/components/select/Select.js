@@ -32,7 +32,7 @@ Select.defaultProps = {
   defaultProps: {},
   onChange: () => {},
   placeholder: "All members",
-  customeStyles: {},
+  customeStyles: navSelectMember,
 };
 
 Select.propTypes = {
