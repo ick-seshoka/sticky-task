@@ -1,18 +1,26 @@
 import React, { createContext, useReducer } from "react";
 
-import { initialState, reducer } from "./reducer";
 import {
+  initialState,
+  reducer,
   updateStickyTaskTitle,
   hideNewStickyTaskCard,
   addStickyTask,
-} from "./dispatchers";
+  setMemberFilter,
+  getFilteredStickyTasks,
+  getMemberFilter,
+  getMembers,
+} from "@modules/stickyTasks";
 
 export const StickyTasksContext = createContext();
 
 const StickyTasksContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { stickyTasks, members, newStickyTaskCardOn } = state;
+  const { newStickyTaskCardOn } = state;
+  const stickyTasks = getFilteredStickyTasks(state);
+  const members = getMembers(state);
+  const memberFilter = getMemberFilter(state);
 
   return (
     <StickyTasksContext.Provider
@@ -20,9 +28,11 @@ const StickyTasksContextProvider = ({ children }) => {
         stickyTasks,
         members,
         newStickyTaskCardOn,
+        memberFilter,
         titleUpdate: (id, title) => updateStickyTaskTitle(dispatch, id, title),
         hideNewStickyTaskCard: () => hideNewStickyTaskCard(dispatch),
         addStickyTask: () => addStickyTask(dispatch),
+        setMemberFilter: (memberName) => setMemberFilter(dispatch, memberName),
       }}
     >
       {children}

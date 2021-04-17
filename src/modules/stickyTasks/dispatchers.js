@@ -16,3 +16,7 @@ export const addStickyTask = (dispatch) => {
   dispatch({ type: actions.ADD_STICKY_TASK });
   dispatch({ type: actions.HIDE_NEW_STICKY_TASK_CARD });
 };
+
+export const setMemberFilter = (dispatch, memberName) => {
+  dispatch({ type: actions.SET_MEMBER_FILTER, payload: { memberName } });
+};
