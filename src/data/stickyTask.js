@@ -25,7 +25,7 @@ export const stickyTasksData = [
     status: "done",
     statusColor: "#FFA000",
     userColor: "#8BC34A",
-    user: "Tshili",
+    user: "tshil",
     priority: "medium",
   },
   {
@@ -34,7 +34,7 @@ export const stickyTasksData = [
     status: "in_progress",
     statusColor: "#F44336",
     userColor: "#E91E63",
-    user: "Kagiso",
+    user: "kagiso",
     priority: "high",
   },
   {
@@ -43,7 +43,7 @@ export const stickyTasksData = [
     status: "done",
     statusColor: "#FFC107",
     userColor: "#2196F3",
-    user: "Isaac",
+    user: "isaac",
     priority: "low",
   },
 ];

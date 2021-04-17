@@ -7,6 +7,7 @@ export const initialState = {
   members: members,
   newStickyTaskCardOn: true,
   memberFilter: "",
+  showDone: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -28,7 +29,6 @@ export const reducer = (state = initialState, action) => {
     }
 
     case actions.ADD_STICKY_TASK: {
-      debugger;
       return {
         ...state,
         stickyTasks: [
@@ -91,6 +91,14 @@ export const reducer = (state = initialState, action) => {
       } = action;
 
       return { ...state, memberFilter: memberName };
+    }
+
+    case actions.SET_SHOW_DONE: {
+      const {
+        payload: { showDone },
+      } = action;
+
+      return { ...state, showDone };
     }
 
     default: {

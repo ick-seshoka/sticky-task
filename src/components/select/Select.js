@@ -14,6 +14,7 @@ const Select = ({
   placeholder,
   customStyles,
   customDropdown,
+  isClearable,
 }) => {
   return customDropdown ? (
     <Container
@@ -23,6 +24,7 @@ const Select = ({
       options={options}
       onChange={onChange}
       placeholder={placeholder}
+      isClearable={isClearable}
     />
   ) : (
     <Container
@@ -31,6 +33,7 @@ const Select = ({
       options={options}
       onChange={onChange}
       placeholder={placeholder}
+      isClearable={isClearable}
     />
   );
 };
@@ -46,6 +49,7 @@ Select.defaultProps = {
   placeholder: "All members",
   customStyles: navSelectMember,
   customDropdown: false,
+  isClearable: false,
 };
 
 Select.propTypes = {
@@ -55,6 +59,7 @@ Select.propTypes = {
   placeholder: PropTypes.string,
   customStyles: PropTypes.object,
   customDropdown: PropTypes.bool,
+  isClearable: PropTypes.bool,
 };
 
 export default Select;

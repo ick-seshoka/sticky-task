@@ -14,14 +14,18 @@ const Navigation = () => {
 
   const options = getMembersOptions(members);
 
-  const handleMemberChange = ({ value }) => {
-    setMemberFilter(value);
+  const handleMemberChange = (option) => {
+    if (option) {
+      setMemberFilter(option.value);
+      return;
+    }
+    setMemberFilter("");
   };
 
   return (
     <Container>
       <Search />
-      <Select options={options} onChange={handleMemberChange} />
+      <Select options={options} onChange={handleMemberChange} isClearable />
       <Done />
     </Container>
   );

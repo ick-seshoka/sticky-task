@@ -1,7 +1,6 @@
 import * as actions from "./actions";
 
 export const updateStickyTaskTitle = (dispatch, id, title) => {
-  debugger;
   dispatch({
     type: actions.UPDATE_STICKY_TASK_TITLE,
     payload: { id, title },
@@ -19,4 +18,8 @@ export const addStickyTask = (dispatch) => {
 
 export const setMemberFilter = (dispatch, memberName) => {
   dispatch({ type: actions.SET_MEMBER_FILTER, payload: { memberName } });
+};
+
+export const setShowDone = (dispatch, showDone) => {
+  dispatch({ type: actions.SET_SHOW_DONE, payload: { showDone } });
 };

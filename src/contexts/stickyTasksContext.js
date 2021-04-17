@@ -10,6 +10,8 @@ import {
   getFilteredStickyTasks,
   getMemberFilter,
   getMembers,
+  getShowDone,
+  setShowDone,
 } from "@modules/stickyTasks";
 
 export const StickyTasksContext = createContext();
@@ -21,6 +23,7 @@ const StickyTasksContextProvider = ({ children }) => {
   const stickyTasks = getFilteredStickyTasks(state);
   const members = getMembers(state);
   const memberFilter = getMemberFilter(state);
+  const showDone = getShowDone(state);
 
   return (
     <StickyTasksContext.Provider
@@ -29,10 +32,12 @@ const StickyTasksContextProvider = ({ children }) => {
         members,
         newStickyTaskCardOn,
         memberFilter,
+        showDone,
         titleUpdate: (id, title) => updateStickyTaskTitle(dispatch, id, title),
         hideNewStickyTaskCard: () => hideNewStickyTaskCard(dispatch),
         addStickyTask: () => addStickyTask(dispatch),
         setMemberFilter: (memberName) => setMemberFilter(dispatch, memberName),
+        setShowDone: (showDone) => setShowDone(dispatch, showDone),
       }}
     >
       {children}
