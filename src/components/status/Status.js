@@ -1,22 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useContext } from "react";
+
+import { StickyTasksContext } from "@contexts/stickyTasksContext";
 
 import { Container, Title, Bold } from "./styles";
 
-const Status = ({ count }) => (
-  <Container>
-    <Title>
-      showing <Bold>{count}</Bold> sticky tasks
-    </Title>
-  </Container>
-);
-
-Status.defaultProps = {
-  count: 12,
-};
-
-Status.propTypes = {
-  count: PropTypes.number.isRequired,
+const Status = () => {
+  const { stickyTasks } = useContext(StickyTasksContext);
+  const count = stickyTasks.length;
+  return (
+    <Container>
+      <Title>
+        showing <Bold>{count}</Bold> sticky task{count > 1 ? "s" : ""}
+      </Title>
+    </Container>
+  );
 };
 
 export default Status;

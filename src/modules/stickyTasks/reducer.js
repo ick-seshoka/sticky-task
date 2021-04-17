@@ -8,6 +8,7 @@ export const initialState = {
   newStickyTaskCardOn: true,
   memberFilter: "",
   showDone: false,
+  searchFilter: "",
 };
 
 export const reducer = (state = initialState, action) => {
@@ -61,7 +62,7 @@ export const reducer = (state = initialState, action) => {
       };
     }
 
-    case actions.UPDATE_STICKY_TASK_TITLE: {
+    case actions.SET_STICKY_TASK_TITLE: {
       const {
         payload: { id, title },
       } = action;
@@ -99,6 +100,14 @@ export const reducer = (state = initialState, action) => {
       } = action;
 
       return { ...state, showDone };
+    }
+
+    case actions.SET_SEARCH_FILTER: {
+      const {
+        payload: { searchFilter },
+      } = action;
+
+      return { ...state, searchFilter };
     }
 
     default: {
