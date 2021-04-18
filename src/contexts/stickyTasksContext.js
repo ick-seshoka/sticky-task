@@ -17,6 +17,7 @@ import {
   setStickyTaskMember,
   setStickyTaskStatus,
   setStickyTaskPriority,
+  addMember,
 } from "@modules/stickyTasks";
 import { getSearchFilter } from "../modules/stickyTasks/selectors";
 
@@ -56,6 +57,7 @@ const StickyTasksContextProvider = ({ children }) => {
           setStickyTaskStatus(dispatch, id, status),
         setStickyTaskPriority: (id, priority) =>
           setStickyTaskPriority(dispatch, id, priority),
+        addMember: (member) => addMember(dispatch, member),
       }}
     >
       {children}

@@ -17,7 +17,6 @@ export const showNewStickyTaskCard = (dispatch) => {
 
 export const addStickyTask = (dispatch) => {
   dispatch({ type: actions.ADD_STICKY_TASK });
-  dispatch({ type: actions.HIDE_NEW_STICKY_TASK_CARD });
 };
 
 export const setMemberFilter = (dispatch, memberName) => {
@@ -51,4 +50,8 @@ export const setStickyTaskPriority = (dispatch, id, priority) => {
     type: actions.SET_STICKY_TASK_PRIORITY,
     payload: { id, priority },
   });
+};
+
+export const addMember = (dispatch, member) => {
+  dispatch({ type: actions.ADD_MEMBER, payload: { member } });
 };

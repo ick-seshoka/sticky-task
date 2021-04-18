@@ -40,11 +40,15 @@ export const reducer = (state = initialState, action) => {
     }
 
     case actions.ADD_MEMBER: {
+      const {
+        payload: { member },
+      } = action;
+
       return {
         ...state,
         members: [
           ...state.members,
-          { id: state.members.length + 1, ...newMemeber },
+          { id: state.members.length + 1, ...member },
         ],
       };
     }
