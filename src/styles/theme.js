@@ -18,6 +18,7 @@ export const theme = {
   },
   fontSize: {
     xlarge: "1.875em",
+    large: "1.625em",
     medium: "1.125em",
     title: "0.875em",
     label: "0.725em",
