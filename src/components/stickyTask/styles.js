@@ -19,9 +19,9 @@ export const ContentWrap = styled.div`
   margin: ${({ margined }) => (margined && "0.85em") || 0};
 `;
 
-export const StatusBar = styled.div`
-  background-color: ${({ statusColor, theme: { colors } }) =>
-    statusColor || colors.gray};
+export const PriorityBar = styled.div`
+  background-color: ${({ priorityColor, theme: { colors } }) =>
+    priorityColor || colors.gray};
   width: 1em;
   height: 100%;
   border-top-right-radius: 1em;
@@ -47,14 +47,9 @@ export const Label = styled.p`
   text-transform: capitalize;
 `;
 
-export const MemeberSelect = styled(Select)``;
+export const MemberSelect = styled(Select)``;
 
 export const StatusSelect = styled(Select)``;
-
-export const Status = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-`;
 
 export const GridWrap = styled.div`
   display: grid;

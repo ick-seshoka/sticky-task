@@ -110,6 +110,24 @@ export const reducer = (state = initialState, action) => {
       return { ...state, searchFilter };
     }
 
+    case actions.SET_STICKY_TASK_MEMBER: {
+      const {
+        payload: { id, memberName },
+      } = action;
+
+      const updateStickyTasks = [...state.stickyTasks].map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            user: memberName,
+          };
+        }
+        return task;
+      });
+
+      return { ...state, stickyTasks: updateStickyTasks };
+    }
+
     default: {
       return state;
     }

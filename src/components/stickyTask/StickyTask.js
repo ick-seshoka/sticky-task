@@ -1,36 +1,59 @@
 import React, { useContext } from "react";
 
 import { StickyTasksContext } from "@contexts/stickyTasksContext";
+import { taskPriorities, statusColors } from "@enums";
+import {
+  getMembersProperties,
+  getStatusProperties,
+  getPriorityProperties,
+} from "@helpers";
+
 import { taskMemberSelect, statusSelect, prioritySelect } from "@styles";
-import { statusOptions, priorityOptions } from "@enums";
 
 import {
   Container,
   ContentWrap,
-  StatusBar,
+  PriorityBar,
   Title,
   Label,
-  Status,
-  MemeberSelect,
+  MemberSelect,
   GridWrap,
   PrioritySelect,
   StatusSelect,
 } from "./styles";
 
-const StickyTask = ({
-  id,
-  userColor,
-  statusColor,
-  title,
-  status,
-  user,
-  priority,
-}) => {
-  const { titleUpdate } = useContext(StickyTasksContext);
+const StickyTask = ({ id, title, status, user, priority }) => {
+  const { titleUpdate, setStickyTaskMember, members } = useContext(
+    StickyTasksContext
+  );
+
+  const { membersOptions, defaultMember, userColor } = getMembersProperties(
+    members,
+    user
+  );
+
+  const {
+    statusOptions,
+    defaultStatus,
+    statusColor,
+    statusBackgroundColor,
+  } = getStatusProperties(statusColors, status);
+
+  const {
+    priorityOptions,
+    defaultPriority,
+    priorityColor,
+    priorityBackgroundColor,
+  } = getPriorityProperties(taskPriorities, priority);
 
   const handleTitleChange = (e) => {
     const { value } = e.target;
     titleUpdate(id, value);
+  };
+
+  const handleMemberChange = (option) => {
+    const { value } = option;
+    setStickyTaskMember(id, value);
   };
 
   return (
@@ -43,18 +66,26 @@ const StickyTask = ({
         />
         <ContentWrap>
           <Label>for:</Label>
-          <MemeberSelect customStyles={taskMemberSelect} />
+          <MemberSelect
+            defaultValue={defaultMember}
+            customStyles={taskMemberSelect}
+            onChange={handleMemberChange}
+            options={membersOptions}
+            placeholder={"select member"}
+          />
         </ContentWrap>
         <ContentWrap flexDirection="row">
           <GridWrap>
             <StatusSelect
               customStyles={statusSelect}
+              defaultValue={defaultStatus}
               options={statusOptions}
               placeholder="select status"
               customDropdown
             />
             <PrioritySelect
               customStyles={prioritySelect}
+              defaultValue={defaultPriority}
               options={priorityOptions}
               placeholder="select priority"
               customDropdown
@@ -62,7 +93,7 @@ const StickyTask = ({
           </GridWrap>
         </ContentWrap>
       </ContentWrap>
-      <StatusBar statusColor={statusColor} />
+      <PriorityBar priorityColor={priorityColor} />
     </Container>
   );
 };

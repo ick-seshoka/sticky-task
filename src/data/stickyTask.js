@@ -1,8 +1,6 @@
 export const newStickyTask = {
   title: "",
   status: "",
-  statusColor: "#FFA000",
-  userColor: "#90A4AE",
   user: "",
   priority: "",
 };
@@ -22,28 +20,22 @@ export const stickyTasksData = [
   {
     id: "1",
     title: "Update your order for the work journals and follow up",
-    status: "done",
-    statusColor: "#FFA000",
-    userColor: "#8BC34A",
+    status: "completed",
     user: "tshil",
-    priority: "medium",
+    priority: "low priority",
   },
   {
     id: "2",
     title: "Debug service worker for SMS gateway in Prod",
-    status: "in_progress",
-    statusColor: "#F44336",
-    userColor: "#E91E63",
+    status: "doing",
     user: "kagiso",
-    priority: "high",
+    priority: "high priority",
   },
   {
     id: "3",
     title: "Conduct user research on social media app idea",
-    status: "done",
-    statusColor: "#FFC107",
-    userColor: "#2196F3",
+    status: "doing",
     user: "isaac",
-    priority: "low",
+    priority: "low priority",
   },
 ];

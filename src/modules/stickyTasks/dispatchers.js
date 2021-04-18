@@ -27,3 +27,10 @@ export const setShowDone = (dispatch, showDone) => {
 export const setSearchFilter = (dispatch, searchFilter) => {
   dispatch({ type: actions.SET_SEARCH_FILTER, payload: { searchFilter } });
 };
+
+export const setStickyTaskMember = (dispatch, id, memberName) => {
+  dispatch({
+    type: actions.SET_STICKY_TASK_MEMBER,
+    payload: { id, memberName },
+  });
+};

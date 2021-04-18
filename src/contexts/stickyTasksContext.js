@@ -14,6 +14,7 @@ import {
   getShowDone,
   setShowDone,
   setSearchFilter,
+  setStickyTaskMember,
 } from "@modules/stickyTasks";
 import { getSearchFilter } from "../modules/stickyTasks/selectors";
 
@@ -45,6 +46,8 @@ const StickyTasksContextProvider = ({ children }) => {
         setShowDone: (showDone) => setShowDone(dispatch, showDone),
         setSearchFilter: (searchFilter) =>
           setSearchFilter(dispatch, searchFilter),
+        setStickyTaskMember: (id, memberName) =>
+          setStickyTaskMember(dispatch, id, memberName),
       }}
     >
       {children}

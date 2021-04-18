@@ -44,7 +44,7 @@ Select.defaultProps = {
     { value: "kagiso", label: "Kagiso" },
     { value: "isaac", label: "Isaac" },
   ],
-  defaultProps: {},
+  defaultValue: {},
   onChange: () => {},
   placeholder: "All members",
   customStyles: navSelectMember,
