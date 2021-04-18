@@ -85,7 +85,7 @@ const StickyTask = ({ id, title, status, user, priority }) => {
             customStyles={taskMemberSelect}
             onChange={handleMemberChange}
             options={membersOptions}
-            placeholder={"select member"}
+            placeholder={"member"}
           />
         </ContentWrap>
         <ContentWrap flexDirection="row">
@@ -95,7 +95,7 @@ const StickyTask = ({ id, title, status, user, priority }) => {
               defaultValue={defaultStatus}
               onChange={handleStatusChange}
               options={statusOptions}
-              placeholder="select status"
+              placeholder="status"
               customDropdown
             />
             <PrioritySelect
@@ -103,13 +103,13 @@ const StickyTask = ({ id, title, status, user, priority }) => {
               defaultValue={defaultPriority}
               onChange={handlePriorityChange}
               options={priorityOptions}
-              placeholder="select priority"
+              placeholder="priority"
               customDropdown
             />
           </GridWrap>
         </ContentWrap>
       </ContentWrap>
-      <PriorityBar priorityColor={priorityColor} />
+      <PriorityBar priority={priority} />
     </Container>
   );
 };

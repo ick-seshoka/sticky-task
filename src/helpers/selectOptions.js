@@ -1,4 +1,3 @@
-import { object } from "prop-types";
 import { formatName } from "./formatters";
 
 export const getMembersOptions = (members) => {
@@ -44,10 +43,12 @@ export const getMembersProperties = (members, memberName) => {
 
 export const getStatusProperties = (statuses, status) => {
   const options = getStatusOptions(statuses);
-  const defaultStatus = options.filter(({ value }) => value === status)[0];
-  const { color, backgroundColor } = statuses.filter(
-    (statusItem) => statusItem.status === status
-  )[0];
+  const defaultStatus =
+    options.filter(({ value }) => value === status)[0] || options[1];
+  const { color, backgroundColor } =
+    (status &&
+      statuses.filter((statusItem) => statusItem.status === status)[0]) ||
+    statuses[1];
 
   return {
     statusOptions: options,
@@ -59,10 +60,14 @@ export const getStatusProperties = (statuses, status) => {
 
 export const getPriorityProperties = (priorities, priority) => {
   const options = getPriorityOptions(priorities);
-  const defaultPriority = options.filter(({ value }) => value === priority)[0];
-  const { color, backgroundColor } = priorities.filter(
-    (priorityItem) => priorityItem.priority === priority
-  )[0];
+  const defaultPriority =
+    options.filter(({ value }) => value === priority)[0] || options[1];
+  const { color, backgroundColor } =
+    (priority &&
+      priorities.filter(
+        (priorityItem) => priorityItem.priority === priority
+      )[0]) ||
+    priorities[1];
 
   return {
     priorityOptions: options,

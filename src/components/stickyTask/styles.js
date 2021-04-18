@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { taskPriorityTitles } from "@enums";
+
 import Select from "@components/select";
 
 export const Container = styled.div`
@@ -20,8 +22,8 @@ export const ContentWrap = styled.div`
 `;
 
 export const PriorityBar = styled.div`
-  background-color: ${({ priorityColor, theme: { colors } }) =>
-    priorityColor || colors.gray};
+  background-color: ${({ priority, theme: { colors } }) =>
+    priority === taskPriorityTitles.high ? colors.red : "transparent"};
   width: 1em;
   height: 100%;
   border-top-right-radius: 1em;
