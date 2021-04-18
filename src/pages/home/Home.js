@@ -45,7 +45,7 @@ const Home = () => {
 
   const handleAddMember = () => {
     addMember({ color: colorCode, name: memberName });
-    handleHideOverlay();
+    setState({ showOverlay: false, memberName: "", colorCode: "" });
   };
 
   return (
