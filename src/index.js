@@ -2,14 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
+import StickyTasksContextProvider from "@contexts";
 import App from "@containers/app";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <StickyTasksContextProvider>
+      <Router>
+        <App />
+      </Router>
+    </StickyTasksContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

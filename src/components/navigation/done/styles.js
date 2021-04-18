@@ -9,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   width: 10.77em;
+  cursor: pointer;
 `;
 
 export const CheckedIcon = styled(IconSource).attrs({

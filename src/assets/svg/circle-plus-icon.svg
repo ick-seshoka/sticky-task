@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="53px" height="53px" viewBox="0 0 53 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <ellipse id="path-1" cx="26.280543" cy="26.2429907" rx="26.280543" ry="26.2429907"></ellipse>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Web-layout---Desktop-HD" transform="translate(-1185.000000, -324.000000)">
+            <g id="Task-manager" transform="translate(-2.000000, 0.000000)">
+                <g id="Cards" transform="translate(203.000000, 263.000000)">
+                    <g id="Add-new-card" transform="translate(889.000000, 0.000000)">
+                        <g id="Sticky-task">
+                            <g id="Add-icon" transform="translate(95.266968, 61.233645)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="Background" fill="#90A4AE" xlink:href="#path-1"></use>
+                                <g id="Plus-sign" mask="url(#mask-2)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.8">
+                                    <g transform="translate(17.520362, 18.370093)" id="Combined-Shape">
+                                        <path d="M7.97541478,7.8728972 L7.97541478,0.342299878 L7.97541478,7.8728972 L0.346757164,7.8728972 L7.97541478,7.8728972 Z M7.97541478,7.8728972 L16.2975867,7.8728972 L7.97541478,7.8728972 L7.97541478,15.4034945 L7.97541478,7.8728972 Z"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
