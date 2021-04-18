@@ -13,8 +13,6 @@ const StickyTasks = ({ tasks }) => {
     <StickyTask key={index} {...task} />
   ));
 
-  console.log(newStickyTaskCardOn);
-
   return (
     <Container>
       {stickyTasks}
