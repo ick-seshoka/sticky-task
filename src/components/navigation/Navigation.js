@@ -10,11 +10,9 @@ import Done from "./done";
 import { Container } from "./styles";
 
 const Navigation = () => {
-  const { members, memberFilter, setMemberFilter } = useContext(
-    StickyTasksContext
-  );
+  const { members, setMemberFilter } = useContext(StickyTasksContext);
 
-  const { memberOptions } = getMembersProperties(members, memberFilter);
+  const { memberOptions } = getMembersProperties(members);
 
   const handleMemberChange = (option) => {
     if (option) {

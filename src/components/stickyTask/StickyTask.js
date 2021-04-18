@@ -31,7 +31,7 @@ const StickyTask = ({ id, title, status, user, priority }) => {
     members,
   } = useContext(StickyTasksContext);
 
-  const { membersOptions, defaultMember, userColor } = getMembersProperties(
+  const { memberOptions, defaultMember, userColor } = getMembersProperties(
     members,
     user
   );
@@ -84,7 +84,7 @@ const StickyTask = ({ id, title, status, user, priority }) => {
             defaultValue={defaultMember}
             customStyles={taskMemberSelect}
             onChange={handleMemberChange}
-            options={membersOptions}
+            options={memberOptions}
             placeholder={"member"}
           />
         </ContentWrap>

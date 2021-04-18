@@ -52,3 +52,7 @@ export const setStickyTaskPriority = (dispatch, id, priority) => {
     payload: { id, priority },
   });
 };
+
+export const addMember = (dispatch, member) => {
+  dispatch({ type: actions.ADD_MEMBER, payload: { member } });
+};
