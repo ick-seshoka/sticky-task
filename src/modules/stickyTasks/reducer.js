@@ -128,6 +128,38 @@ export const reducer = (state = initialState, action) => {
       return { ...state, stickyTasks: updateStickyTasks };
     }
 
+    case actions.SET_STICKY_TASK_STATUS: {
+      const {
+        payload: { id, status },
+      } = action;
+
+      const updateStickyTasks = [...state.stickyTasks].map((task) => {
+        if (task.id === id) {
+          return { ...task, status };
+        }
+
+        return task;
+      });
+
+      return { ...state, stickyTasks: [...updateStickyTasks] };
+    }
+
+    case actions.SET_STICKY_TASK_PRIORITY: {
+      const {
+        payload: { id, priority },
+      } = action;
+
+      const updateStickyTasks = [...state.stickyTasks].map((task) => {
+        if (task.id === id) {
+          return { ...task, priority };
+        }
+
+        return task;
+      });
+
+      return { ...state, stickyTasks: [...updateStickyTasks] };
+    }
+
     default: {
       return state;
     }

@@ -1,6 +1,6 @@
 import * as actions from "./actions";
 
-export const updateStickyTaskTitle = (dispatch, id, title) => {
+export const setStickyTaskTitle = (dispatch, id, title) => {
   dispatch({
     type: actions.SET_STICKY_TASK_TITLE,
     payload: { id, title },
@@ -32,5 +32,19 @@ export const setStickyTaskMember = (dispatch, id, memberName) => {
   dispatch({
     type: actions.SET_STICKY_TASK_MEMBER,
     payload: { id, memberName },
+  });
+};
+
+export const setStickyTaskStatus = (dispatch, id, status) => {
+  dispatch({
+    type: actions.SET_STICKY_TASK_STATUS,
+    payload: { id, status },
+  });
+};
+
+export const setStickyTaskPriority = (dispatch, id, priority) => {
+  dispatch({
+    type: actions.SET_STICKY_TASK_PRIORITY,
+    payload: { id, priority },
   });
 };

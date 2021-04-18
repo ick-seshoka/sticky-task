@@ -3,7 +3,7 @@ import React, { createContext, useReducer } from "react";
 import {
   initialState,
   reducer,
-  updateStickyTaskTitle,
+  setStickyTaskTitle,
   hideNewStickyTaskCard,
   addStickyTask,
   setMemberFilter,
@@ -15,6 +15,8 @@ import {
   setShowDone,
   setSearchFilter,
   setStickyTaskMember,
+  setStickyTaskStatus,
+  setStickyTaskPriority,
 } from "@modules/stickyTasks";
 import { getSearchFilter } from "../modules/stickyTasks/selectors";
 
@@ -39,7 +41,8 @@ const StickyTasksContextProvider = ({ children }) => {
         memberFilter,
         showDone,
         searchFilter,
-        titleUpdate: (id, title) => updateStickyTaskTitle(dispatch, id, title),
+        setStickyTaskTitle: (id, title) =>
+          setStickyTaskTitle(dispatch, id, title),
         hideNewStickyTaskCard: () => hideNewStickyTaskCard(dispatch),
         addStickyTask: () => addStickyTask(dispatch),
         setMemberFilter: (memberName) => setMemberFilter(dispatch, memberName),
@@ -48,6 +51,10 @@ const StickyTasksContextProvider = ({ children }) => {
           setSearchFilter(dispatch, searchFilter),
         setStickyTaskMember: (id, memberName) =>
           setStickyTaskMember(dispatch, id, memberName),
+        setStickyTaskStatus: (id, status) =>
+          setStickyTaskStatus(dispatch, id, status),
+        setStickyTaskPriority: (id, priority) =>
+          setStickyTaskPriority(dispatch, id, priority),
       }}
     >
       {children}

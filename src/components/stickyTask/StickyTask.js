@@ -23,9 +23,13 @@ import {
 } from "./styles";
 
 const StickyTask = ({ id, title, status, user, priority }) => {
-  const { titleUpdate, setStickyTaskMember, members } = useContext(
-    StickyTasksContext
-  );
+  const {
+    setStickyTaskTitle,
+    setStickyTaskStatus,
+    setStickyTaskPriority,
+    setStickyTaskMember,
+    members,
+  } = useContext(StickyTasksContext);
 
   const { membersOptions, defaultMember, userColor } = getMembersProperties(
     members,
@@ -48,12 +52,22 @@ const StickyTask = ({ id, title, status, user, priority }) => {
 
   const handleTitleChange = (e) => {
     const { value } = e.target;
-    titleUpdate(id, value);
+    setStickyTaskTitle(id, value);
   };
 
   const handleMemberChange = (option) => {
     const { value } = option;
     setStickyTaskMember(id, value);
+  };
+
+  const handleStatusChange = (option) => {
+    const { value } = option;
+    setStickyTaskStatus(id, value);
+  };
+
+  const handlePriorityChange = (option) => {
+    const { value } = option;
+    setStickyTaskPriority(id, value);
   };
 
   return (
@@ -79,6 +93,7 @@ const StickyTask = ({ id, title, status, user, priority }) => {
             <StatusSelect
               customStyles={statusSelect}
               defaultValue={defaultStatus}
+              onChange={handleStatusChange}
               options={statusOptions}
               placeholder="select status"
               customDropdown
@@ -86,6 +101,7 @@ const StickyTask = ({ id, title, status, user, priority }) => {
             <PrioritySelect
               customStyles={prioritySelect}
               defaultValue={defaultPriority}
+              onChange={handlePriorityChange}
               options={priorityOptions}
               placeholder="select priority"
               customDropdown
