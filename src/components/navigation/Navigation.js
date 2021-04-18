@@ -14,10 +14,7 @@ const Navigation = () => {
     StickyTasksContext
   );
 
-  const { memberOptions, defaultMember } = getMembersProperties(
-    members,
-    memberFilter
-  );
+  const { memberOptions } = getMembersProperties(members, memberFilter);
 
   const handleMemberChange = (option) => {
     if (option) {
@@ -34,7 +31,7 @@ const Navigation = () => {
         options={memberOptions}
         onChange={handleMemberChange}
         isClearable
-        defaultValue={defaultMember}
+        defaultValue
       />
       <Done />
     </Container>

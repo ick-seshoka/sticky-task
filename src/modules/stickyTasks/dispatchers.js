@@ -11,6 +11,10 @@ export const hideNewStickyTaskCard = (dispatch) => {
   dispatch({ type: actions.HIDE_NEW_STICKY_TASK_CARD });
 };
 
+export const showNewStickyTaskCard = (dispatch) => {
+  dispatch({ type: actions.SHOW_NEW_STICKY_TASK_CARD });
+};
+
 export const addStickyTask = (dispatch) => {
   dispatch({ type: actions.ADD_STICKY_TASK });
   dispatch({ type: actions.HIDE_NEW_STICKY_TASK_CARD });

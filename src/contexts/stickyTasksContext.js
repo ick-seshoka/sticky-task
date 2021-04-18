@@ -25,7 +25,7 @@ export const StickyTasksContext = createContext();
 const StickyTasksContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { newStickyTaskCardOn } = getNewStickyTaskCardOn(state);
+  const newStickyTaskCardOn = getNewStickyTaskCardOn(state);
   const stickyTasks = getFilteredStickyTasks(state);
   const members = getMembers(state);
   const memberFilter = getMemberFilter(state);
@@ -44,6 +44,7 @@ const StickyTasksContextProvider = ({ children }) => {
         setStickyTaskTitle: (id, title) =>
           setStickyTaskTitle(dispatch, id, title),
         hideNewStickyTaskCard: () => hideNewStickyTaskCard(dispatch),
+        showNewStickyTaskCard: () => showNewStickyTaskCard(dispatch),
         addStickyTask: () => addStickyTask(dispatch),
         setMemberFilter: (memberName) => setMemberFilter(dispatch, memberName),
         setShowDone: (showDone) => setShowDone(dispatch, showDone),
