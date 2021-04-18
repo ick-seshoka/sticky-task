@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import { StickyTasksContext } from "@contexts/stickyTasksContext";
-import { getMembersOptions } from "@helpers";
+import { getMembersProperties } from "@helpers";
 
 import Search from "./search";
 import Select from "@components/select";
@@ -10,9 +10,14 @@ import Done from "./done";
 import { Container } from "./styles";
 
 const Navigation = () => {
-  const { members, setMemberFilter } = useContext(StickyTasksContext);
+  const { members, memberFilter, setMemberFilter } = useContext(
+    StickyTasksContext
+  );
 
-  const options = getMembersOptions(members);
+  const { memberOptions, defaultMember } = getMembersProperties(
+    members,
+    memberFilter
+  );
 
   const handleMemberChange = (option) => {
     if (option) {
@@ -25,7 +30,12 @@ const Navigation = () => {
   return (
     <Container>
       <Search />
-      <Select options={options} onChange={handleMemberChange} isClearable />
+      <Select
+        options={memberOptions}
+        onChange={handleMemberChange}
+        isClearable
+        defaultValue={defaultMember}
+      />
       <Done />
     </Container>
   );

@@ -30,8 +30,10 @@ export const getPriorityOptions = (priorities) => {
 
 export const getMembersProperties = (members, memberName) => {
   const options = getMembersOptions(members);
-  const defaultMember = options.filter(({ value }) => value === memberName)[0];
-  const { color } = members.filter((member) => member.name === memberName)[0];
+  const defaultMember =
+    options.filter(({ value }) => value === memberName)[0] || "";
+  const { color } =
+    members.filter((member) => member.name === memberName)[0] || "";
 
   return {
     memberOptions: options,
