@@ -40,6 +40,22 @@ export const navSelectMember = {
     top: "-10%",
     position: "relative",
   }),
+
+  placeholder: (provided, state) => ({
+    ...provided,
+    color: colors.blueGray,
+  }),
+
+  clearIndicator: (provided, state) => ({
+    ...provided,
+    color: colors.blueGray,
+  }),
+
+  singleValue: (provided, state) => ({
+    ...provided,
+    color: colors.blueGray,
+    fontWeight: "500",
+  }),
 };
 
 export const taskMemberSelect = {
