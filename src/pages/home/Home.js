@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 
 import { StickyTasksContext } from "@contexts/stickyTasksContext";
+import { isColor } from "@helpers";
 
 import Toolbar from "@components/toolbar";
 import Header from "@components/header";
@@ -17,9 +18,10 @@ const Home = () => {
     showOverlay: false,
     memberName: "",
     colorCode: "",
+    isValidColor: true,
   });
 
-  const { showOverlay, memberName, colorCode } = state;
+  const { showOverlay, memberName, colorCode, isValidColor } = state;
 
   const handleShowOverlay = () => {
     setState({ ...state, showOverlay: true });
@@ -40,12 +42,23 @@ const Home = () => {
     e.preventDefault();
     const { value } = e.target;
 
-    setState({ ...state, colorCode: value });
+    setState({ ...state, colorCode: value, isValidColor: true });
   };
 
   const handleAddMember = () => {
     addMember({ color: colorCode, name: memberName });
-    setState({ showOverlay: false, memberName: "", colorCode: "" });
+    setState({
+      showOverlay: false,
+      memberName: "",
+      colorCode: "",
+      isValidColor: true,
+    });
+  };
+
+  const handleValidateColor = () => {
+    if (!isColor(colorCode)) {
+      setState({ ...state, isValidColor: false });
+    }
   };
 
   return (
@@ -63,6 +76,8 @@ const Home = () => {
             onNameChange={handleNameChange}
             onColorChange={handleColorChange}
             handleAddMember={handleAddMember}
+            handleValidateColor={handleValidateColor}
+            isValidColor={isValidColor}
           />
         </Overlay>
         <Header />

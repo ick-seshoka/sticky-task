@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-  AddMemberButtob,
+  AddMemberButton,
   ColorInput,
   Container,
   MemberIcon,
@@ -18,26 +18,39 @@ const AddMember = ({
   onNameChange,
   onColorChange,
   handleAddMember,
-}) => (
-  <Container>
-    <MemberIcon />
-    <Title>Add a new member</Title>
-    <NameInput
-      value={memberName}
-      onChange={onNameChange}
-      placeholder="member name"
-    />
-    <ColorInput
-      value={colorCode}
-      onChange={onColorChange}
-      placeholder="color code"
-    />
-    <AddMemberButtob onClick={handleAddMember}>add member</AddMemberButtob>
-    <Note>
-      <Bold>Note:</Bold> member color code has to be a valid color code: #2196F3
-    </Note>
-  </Container>
-);
+  handleValidateColor,
+  isValidColor,
+}) => {
+  return (
+    <Container>
+      <MemberIcon />
+      <Title>Add a new member</Title>
+      <NameInput
+        value={memberName}
+        onChange={onNameChange}
+        placeholder="member name"
+        required
+        maxLength="15"
+      />
+      <ColorInput
+        value={colorCode}
+        onChange={onColorChange}
+        placeholder="color code"
+        required
+        maxLength="45"
+        onBlur={handleValidateColor}
+        isValidColor={isValidColor}
+      />
+      <AddMemberButton disabled={!isValidColor} onClick={handleAddMember}>
+        add member
+      </AddMemberButton>
+      <Note>
+        <Bold>Note:</Bold> member color code has to be a valid css color value
+        e.g. #2196F3 , yellow, rgba(255, 255, 255)
+      </Note>
+    </Container>
+  );
+};
 
 AddMember.defaultProps = {
   memberName: "",
@@ -45,6 +58,8 @@ AddMember.defaultProps = {
   onNameChange: () => {},
   onColorChange: () => {},
   handleAddMember: () => {},
+  handleValidateColor: () => {},
+  isValidColor: true,
 };
 
 AddMember.propTypes = {
@@ -53,6 +68,8 @@ AddMember.propTypes = {
   onNameChange: PropTypes.func.isRequired,
   onColorChange: PropTypes.func.isRequired,
   handleAddMember: PropTypes.func.isRequired,
+  handleValidateColor: PropTypes.func.isRequired,
+  isValidColor: PropTypes.bool.isRequired,
 };
 
 export default AddMember;
