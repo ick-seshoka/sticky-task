@@ -10,7 +10,7 @@ export const newMember = {
   name: "",
 };
 
-export const members = [
+export const membersData = [
   { id: 1, color: "#FFA000", name: "tshil" },
   { id: 2, color: "#E91E63", name: "kagiso" },
   { id: 3, color: "#2196F3", name: "isaac" },
