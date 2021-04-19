@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 
 import {
   initialState,
@@ -18,13 +18,23 @@ import {
   setStickyTaskStatus,
   setStickyTaskPriority,
   addMember,
+  getSearchFilter,
 } from "@modules/stickyTasks";
-import { getSearchFilter } from "../modules/stickyTasks/selectors";
+import { clearLocalStorage, persistStateToLocalStorage } from "@helpers";
 
 export const StickyTasksContext = createContext();
 
 const StickyTasksContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    persistStateToLocalStorage(members, stickyTasks);
+    console.log(members, stickyTasks);
+
+    return () => {
+      clearLocalStorage();
+    };
+  }, [state.members, state.stickyTasks]);
 
   const newStickyTaskCardOn = getNewStickyTaskCardOn(state);
   const stickyTasks = getFilteredStickyTasks(state);

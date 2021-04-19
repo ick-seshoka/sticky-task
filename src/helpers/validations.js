@@ -1,5 +1,5 @@
-export const isColor = (color) => {
+export const isColor = (colorCode) => {
   const style = new Option().style;
-  style.color = color;
+  style.color = colorCode;
   return style.color !== "";
 };

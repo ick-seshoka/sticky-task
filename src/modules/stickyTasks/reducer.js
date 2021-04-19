@@ -1,10 +1,13 @@
 import * as actions from "./actions";
 import { stickyTasksData, newStickyTask } from "@data";
-import { members } from "@data";
+import { membersData } from "@data";
+import { getPersistedStateFromLocalStorage } from "@helpers";
+
+const { members, stickyTasks } = getPersistedStateFromLocalStorage();
 
 export const initialState = {
-  stickyTasks: stickyTasksData,
-  members: members,
+  stickyTasks: stickyTasks || stickyTasksData,
+  members: members || membersData,
   newStickyTaskCardOn: true,
   memberFilter: "",
   showDone: false,
