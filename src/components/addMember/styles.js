@@ -46,9 +46,12 @@ export const NameInput = styled.input`
 `;
 
 export const ColorInput = styled.input`
-  color: ${({ theme: { colors } }) => colors.darkBlueGray};
+  color: ${({ theme: { colors }, isValidColor }) =>
+    isValidColor ? colors.darkBlueGray : colors.red};
   background: transparent;
-  border: 1px solid ${({ theme: { colors } }) => colors.blueGray};
+  border: 1px solid
+    ${({ theme: { colors }, isValidColor }) =>
+      isValidColor ? colors.blueGray : colors.red};
   padding: 0.5em;
   border-radius: 0.4375em;
   text-align: center;
@@ -57,13 +60,12 @@ export const ColorInput = styled.input`
   margin-bottom: 1.2625em;
   width: 16.25em;
   outline: none;
-
   &::placeholder {
     color: ${({ theme: { colors } }) => colors.shadedBlueGray};
   }
 `;
 
-export const AddMemberButtob = styled.button`
+export const AddMemberButton = styled.button`
   background-color: ${({ theme: { colors } }) => colors.green};
   border: none;
   outline: none;
@@ -77,6 +79,7 @@ export const AddMemberButtob = styled.button`
   text-transform: capitalize;
   font-size: ${({ theme: { fontSize } }) => fontSize.regular};
   margin-bottom: 2em;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 
 export const Note = styled.p`
