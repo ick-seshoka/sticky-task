@@ -25,8 +25,8 @@ export const UncheckedIcon = styled(IconSource).attrs({
 `;
 
 export const Title = styled.p`
-  font-size: ${({ theme: { fontSize } }) => fontSize.title};
+  font-size: ${({ theme: { fontSize } }) => fontSize.regular};
   color: ${({ theme: { colors } }) => colors.blueGray};
-  font-weight: 600;
+  font-weight: 500;
   margin-left: ${({ theme: { spacing } }) => spacing.paragraph.imageGap};
 `;

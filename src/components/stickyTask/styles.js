@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-import { taskPriorityTitles } from "@enums";
+import { taskPriorityTitles, taskStatus } from "@enums";
 
 import Select from "@components/select";
 
 export const Container = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: 1fr fit-content(1em);
   height: 16.137em;
@@ -13,6 +14,22 @@ export const Container = styled.div`
     userColor || colors.gray};
   border-radius: 1em;
   margin: ${({ theme: { spacing } }) => spacing.stickyTasks.taskMargin};
+
+  ${({ status }) =>
+    status === taskStatus.completed &&
+    css`
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 1em;
+      }
+    `}
 `;
 
 export const ContentWrap = styled.div`

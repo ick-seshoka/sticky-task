@@ -29,7 +29,6 @@ const StickyTasksContextProvider = ({ children }) => {
 
   useEffect(() => {
     persistStateToLocalStorage(members, stickyTasks);
-    console.log(members, stickyTasks);
 
     return () => {
       clearLocalStorage();

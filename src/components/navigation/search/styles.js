@@ -22,5 +22,10 @@ export const Input = styled.input`
   width: 7.775em;
   outline: none;
   color: ${({ theme: { colors } }) => colors.blueGray};
-  font-size: ${({ theme: { fontSize } }) => fontSize.medium};
+  font-size: ${({ theme: { fontSize } }) => fontSize.regular};
+  font-weight: 500;
+
+  &::placeholder {
+    color: ${({ theme: { colors } }) => colors.blueGray};
+  }
 `;
