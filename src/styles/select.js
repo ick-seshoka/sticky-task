@@ -77,6 +77,18 @@ export const taskMemberSelect = {
     ...provided,
     display: "none",
   }),
+
+  singleValue: (provided, state) => ({
+    ...provided,
+    color: "rgba(55, 71, 79, 0.8)",
+    fontWeight: "600",
+  }),
+
+  placeholder: (provided, state) => ({
+    ...provided,
+    color: "rgba(55, 71 ,796, 085)",
+    fontWeight: "600",
+  }),
 };
 
 export const statusSelect = {

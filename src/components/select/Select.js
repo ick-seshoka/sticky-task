@@ -25,6 +25,7 @@ const Select = ({
       onChange={onChange}
       placeholder={placeholder}
       isClearable={isClearable}
+      menuPortalTarget={document.querySelector("body")}
     />
   ) : (
     <Container
@@ -34,6 +35,7 @@ const Select = ({
       onChange={onChange}
       placeholder={placeholder}
       isClearable={isClearable}
+      menuPortalTarget={document.querySelector("body")}
     />
   );
 };

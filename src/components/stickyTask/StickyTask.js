@@ -71,7 +71,7 @@ const StickyTask = ({ id, title, status, user, priority }) => {
   };
 
   return (
-    <Container userColor={userColor}>
+    <Container userColor={userColor} status={status}>
       <ContentWrap margined>
         <Title
           value={title}
